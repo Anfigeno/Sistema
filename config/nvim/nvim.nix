@@ -1,12 +1,41 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
-  programs.neovim = 
-  let
-    toLua = str: "lua << EOF\n${str}\nEOF\n";
-    toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-  in
-  {
+  nixpkgs = {
+    overlays = [
+      (final: prev: {
+        vimPlugins = prev.vimPlugins // {
+          own-hlchunk-nvim = prev.vimUtils.buildVimPlugin {
+            name = "halchunk";
+            src = inputs.plugin-hlchunk-nvim;
+          };
+
+          own-modes-nvim = prev.vimUtils.buildVimPlugin {
+            name = "modes";
+            src = inputs.plugin-modes-nvim;
+          };
+
+          own-workspaces-nvim = prev.vimUtils.buildVimPlugin {
+            name = "workspaces";
+            src = inputs.plugin-workspaces-nvim;
+          };
+        };
+      })
+    ];
+  };
+
+  programs.neovim = let
+    toLua = str: ''
+      lua << EOF
+      ${str}
+      EOF
+    '';
+    toLuaFile = file: ''
+      lua << EOF
+      ${builtins.readFile file}
+      EOF
+    '';
+  in {
     enable = true;
     defaultEditor = true;
     viAlias = true;
@@ -14,17 +43,52 @@
 
     configure.customRC = toLuaFile ./options.lua;
 
-    configure.packages.nix.start = with pkgs.vimPlugins; [ 
-      
+    configure.packages.nix.start = with pkgs.vimPlugins; [
+      {
+        plugin = nvim-notify;
+        config = toLuaFile ./plugins/notify.lua;
+      }
+
+      {
+        plugin = own-workspaces-nvim;
+        config = toLuaFile ./plugins/workspaces.lua;
+      }
+
+      {
+        plugin = todo-comments-nvim;
+        config = toLuaFile ./plugins/todo-comments.lua;
+      }
+
+      {
+        plugin = tabout-nvim;
+        config = toLuaFile ./plugins/tabout.lua;
+      }
+
+      {
+        plugin = stay-centered-nvim;
+        config = toLua ''require("stay-centered").setup()'';
+      }
+
+      {
+        plugin = dashboard-nvim;
+        config = toLuaFile ./plugins/dashboard.lua;
+      }
+
+      {
+        plugin = satellite-nvim;
+        config = toLuaFile ./plugins/satellite.lua;
+      }
 
       {
         plugin = gruvbox-nvim;
         config = "colorscheme gruvbox";
       }
+
       {
         plugin = nvim-lspconfig;
         config = toLuaFile ./lsp.lua;
       }
+
       cmp-nvim-lsp
       cmp-buffer
       cmp-path
@@ -35,7 +99,7 @@
       friendly-snippets
       {
         plugin = nvim-autopairs;
-        config = toLua "require(\"nvim-autopairs\").setup()";
+        config = toLua ''require("nvim-autopairs").setup()'';
       }
       {
         plugin = nvim-cmp;
@@ -62,7 +126,7 @@
 
       {
         plugin = nvim-colorizer-lua;
-        config = toLua "require(\"colorizer\").setup()";
+        config = toLua ''require("colorizer").setup()'';
       }
 
       {
@@ -72,12 +136,65 @@
 
       {
         plugin = inc-rename-nvim;
-        config = toLua "require(\"inc_rename\").setup()";
+        config = toLua ''require("inc_rename").setup()'';
       }
 
       {
         plugin = mini-nvim;
         config = toLuaFile ./plugins/mini.lua;
+      }
+
+      {
+        plugin = own-hlchunk-nvim;
+        config = toLuaFile ./plugins/hlchunk.lua;
+      }
+
+      {
+        plugin = own-modes-nvim;
+        config = toLuaFile ./plugins/modes.lua;
+      }
+
+      {
+        plugin = rainbow-delimiters-nvim;
+        config = toLuaFile ./plugins/rainbow-delimiters.lua;
+      }
+
+      plenary-nvim
+      {
+        plugin = telescope-nvim;
+        config = toLuaFile ./plugins/telescope.lua;
+      }
+
+      nvim-web-devicons
+      nui-nvim
+      {
+        plugin = neo-tree-nvim;
+        config = toLuaFile ./plugins/neotree.lua;
+      }
+
+      {
+        plugin = edgy-nvim;
+        config = toLuaFile ./plugins/edgy.lua;
+      }
+
+      {
+        plugin = toggleterm-nvim;
+        config = toLuaFile ./plugins/toggleterm.lua;
+      }
+
+      {
+        plugin = neoformat;
+        config = toLuaFile ./plugins/neoformat.lua;
+      }
+
+      {
+        plugin = neocord;
+        config = toLua ''require("neocord").setup()'';
+      }
+
+      {
+        plugin = noice-nvim;
+        config = toLuaFile ./plugins/noice.lua;
       }
     ];
   };

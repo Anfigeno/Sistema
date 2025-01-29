@@ -36,10 +36,61 @@
         "type": "github"
       }
     },
+    "plugin-hlchunk-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1732349755,
+        "narHash": "sha256-f5VVfpfVZk6ULBWVSVEzXBN9F4ROTzhomV1F2mKIem4=",
+        "owner": "shellRaining",
+        "repo": "hlchunk.nvim",
+        "rev": "5465dd33ade8676d63f6e8493252283060cd72ca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "shellRaining",
+        "repo": "hlchunk.nvim",
+        "type": "github"
+      }
+    },
+    "plugin-modes-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1737854762,
+        "narHash": "sha256-XgER+qp/GSAimj7C23coOpwsEc3CdImyN+tFVIPKqh0=",
+        "owner": "mvllow",
+        "repo": "modes.nvim",
+        "rev": "1e34663c32e8f5d915921a938e0dc4e3e788ceb8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mvllow",
+        "repo": "modes.nvim",
+        "type": "github"
+      }
+    },
+    "plugin-workspaces-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728349676,
+        "narHash": "sha256-a3f0NUYooMxrZEqLer+Duv6/ktq5MH2qUoFHD8z7fZA=",
+        "owner": "natecraddock",
+        "repo": "workspaces.nvim",
+        "rev": "55a1eb6f5b72e07ee8333898254e113e927180ca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "natecraddock",
+        "repo": "workspaces.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "plugin-hlchunk-nvim": "plugin-hlchunk-nvim",
+        "plugin-modes-nvim": "plugin-modes-nvim",
+        "plugin-workspaces-nvim": "plugin-workspaces-nvim"
       }
     }
   },

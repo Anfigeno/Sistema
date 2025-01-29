@@ -6,8 +6,9 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSi
 
 -- LSP's
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local lspconfig = require("lspconfig")
 
-require("lspconfig").lua_ls.setup({
+lspconfig.lua_ls.setup({
 	capabilities = capabilities,
 	settings = { Lua = { hint = {
 		enable = true,
@@ -15,7 +16,7 @@ require("lspconfig").lua_ls.setup({
 	} } },
 })
 
-require("lspconfig").ts_ls.setup({
+lspconfig.ts_ls.setup({
 	capabilities = capabilities,
 	settings = {
 		javascript = {
@@ -42,3 +43,5 @@ require("lspconfig").ts_ls.setup({
 		},
 	},
 })
+
+lspconfig.nixd.setup({})

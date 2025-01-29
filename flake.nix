@@ -8,6 +8,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    plugin-modes-nvim.url = "github:mvllow/modes.nvim";
+    plugin-modes-nvim.flake = false;
+
+    plugin-hlchunk-nvim.url = "github:shellRaining/hlchunk.nvim";
+    plugin-hlchunk-nvim.flake = false;
+
+    plugin-workspaces-nvim.url = "github:natecraddock/workspaces.nvim";
+    plugin-workspaces-nvim.flake = false;
   };
 
   outputs = { self, nixpkgs, ... }@inputs: 
