@@ -117,6 +117,9 @@
         p.tree-sitter-json
         p.tree-sitter-markdown
         p.tree-sitter-svelte
+        p.tree-sitter-typescript
+        p.tree-sitter-tsx
+        p.tree-sitter-javascript
       ]))
 
       scope-nvim

@@ -50,6 +50,8 @@
     gnomeExtensions.appindicator
     monaspace
     nerd-fonts.droid-sans-mono
+    nixd
+    nixfmt-rfc-style
   ];
 
   #
