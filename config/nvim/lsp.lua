@@ -45,3 +45,5 @@ lspconfig.ts_ls.setup({
 })
 
 lspconfig.nixd.setup({})
+
+lspconfig.svelte.setup({})

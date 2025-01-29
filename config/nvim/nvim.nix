@@ -116,6 +116,7 @@
         p.tree-sitter-ruby
         p.tree-sitter-json
         p.tree-sitter-markdown
+        p.tree-sitter-svelte
       ]))
 
       scope-nvim
