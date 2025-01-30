@@ -120,6 +120,7 @@
         p.tree-sitter-typescript
         p.tree-sitter-tsx
         p.tree-sitter-javascript
+        p.tree-sitter-jsdoc
       ]))
 
       scope-nvim
