@@ -72,11 +72,6 @@
         }
 
         {
-          plugin = tabout-nvim;
-          config = toLuaFile ./plugins/tabout.lua;
-        }
-
-        {
           plugin = stay-centered-nvim;
           config = toLua ''require("stay-centered").setup()'';
         }
@@ -134,6 +129,11 @@
           p.tree-sitter-javascript
           p.tree-sitter-jsdoc
         ]))
+
+        {
+          plugin = nvim-treesitter;
+          config = toLuaFile ./plugins/treesitter.lua;
+        }
 
         scope-nvim
         {
