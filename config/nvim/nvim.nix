@@ -52,6 +52,11 @@
 
       configure.packages.nix.start = with pkgs.vimPlugins; [
         {
+          plugin = tabout-nvim;
+          config = toLuaFile ./plugins/tabout.lua;
+        }
+
+        {
           plugin = hover-nvim;
           config = toLuaFile ./plugins/hover.lua;
         }
@@ -106,7 +111,7 @@
         friendly-snippets
         {
           plugin = nvim-autopairs;
-          config = toLua ''require("nvim-autopairs").setup()'';
+          config = toLuaFile ./plugins/autopairs.lua;
         }
         {
           plugin = nvim-cmp;
