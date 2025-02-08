@@ -52,6 +52,11 @@
 
       configure.packages.nix.start = with pkgs.vimPlugins; [
         {
+          plugin = copilot-lua;
+          config = toLua ''require("copilot").setup({})'';
+        }
+
+        {
           plugin = tabout-nvim;
           config = toLuaFile ./plugins/tabout.lua;
         }
