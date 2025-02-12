@@ -41,7 +41,6 @@
     luajit
     luajitPackages.luarocks
     copyq
-    xclip
     zellij
     zip
     unzip
@@ -50,7 +49,18 @@
     gnomeExtensions.appindicator
     monaspace
     nerd-fonts.droid-sans-mono
+
+    # Para Neovim
+    xclip
+    nodejs_20
+
+    # Lenguajes de servidor y formateadores
+    typescript-language-server
+    lua-language-server
     nixd
+    biome
+    prettierd
+    stylua
     nixfmt-rfc-style
   ];
 
