@@ -19,28 +19,29 @@
     plugin-workspaces-nvim.flake = false;
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: 
-  let
-    system = "x86_x64-linux";
+  outputs =
+    { self, nixpkgs, ... }@inputs:
+    let
+      system = "x86_x64-linux";
 
-    pkgs = import nixpkgs {
-      inherit system;
+      pkgs = import nixpkgs {
+        inherit system;
 
-      config = {
-        allowUnfree = true;
+        config = {
+          allowUnfree = true;
+        };
+      };
+    in
+    {
+      nixosConfigurations = {
+        myNixos = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs system; };
+
+          modules = [
+            ./nixos/configuration.nix
+            ./config/nvim/nvim.nix
+          ];
+        };
       };
     };
-  in
-  {
-    nixosConfigurations = {
-      myNixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs system; };
-
-        modules = [
-          ./nixos/configuration.nix
-          ./config/nvim/nvim.nix
-        ];
-      };
-    };
-  };
 }

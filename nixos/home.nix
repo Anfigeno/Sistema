@@ -24,9 +24,7 @@
     fishPlugins.tide
     fishPlugins.plugin-git
     vscode
-    kitty
     kitty-img
-    kitty-themes
     wget
     curl
     gnome-tweaks
@@ -113,6 +111,8 @@
       init.defaultBranch = "main";
     };
   };
+
+  programs.kitty = import ../config/kitty/kitty.nix;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
