@@ -31,7 +31,6 @@
     eza
     fzf
     yazi
-    gh
     zed-editor
     sshfs
     btop
@@ -113,6 +112,7 @@
   };
 
   programs.kitty = import ../config/kitty/kitty.nix;
+  programs.gh.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

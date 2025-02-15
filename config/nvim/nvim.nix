@@ -24,6 +24,11 @@
             name = "workspaces";
             src = inputs.plugin-workspaces-nvim;
           };
+
+          own-mestizo-nvim = prev.vimUtils.buildVimPlugin {
+            name = "mestizo";
+            src = inputs.plugin-mestizo-nvim;
+          };
         };
       })
     ];
@@ -51,6 +56,11 @@
       configure.customRC = toLuaFile ./options.lua;
 
       configure.packages.nix.start = with pkgs.vimPlugins; [
+        {
+          plugin = lualine-nvim;
+          config = toLuaFile ./plugins/lualine.lua;
+        }
+
         {
           plugin = copilot-lua;
           config = toLua ''require("copilot").setup({})'';
@@ -97,8 +107,8 @@
         }
 
         {
-          plugin = gruvbox-nvim;
-          config = "colorscheme gruvbox";
+          plugin = own-mestizo-nvim;
+          config = "colorscheme mestizo";
         }
 
         {

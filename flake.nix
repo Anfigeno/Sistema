@@ -17,6 +17,9 @@
 
     plugin-workspaces-nvim.url = "github:natecraddock/workspaces.nvim";
     plugin-workspaces-nvim.flake = false;
+
+    plugin-mestizo-nvim.url = "github:Anfigeno/Mestizo.nvim";
+    plugin-mestizo-nvim.flake = false;
   };
 
   outputs =
