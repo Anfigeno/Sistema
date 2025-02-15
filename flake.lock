@@ -55,11 +55,11 @@
     "plugin-mestizo-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1739592086,
-        "narHash": "sha256-ARSDWLXd9QlvULNbnbK4UaSMghJuVoYhZfhzxsAgbCg=",
+        "lastModified": 1739633859,
+        "narHash": "sha256-JrS2Q9AAoicVTaoGaKoOILe3yB2ZIHQEUVXvWL4bpbs=",
         "owner": "Anfigeno",
         "repo": "Mestizo.nvim",
-        "rev": "6b8bfec5397c404fa65855aa799c71330791f28c",
+        "rev": "cb2cbc7d1eb560a4a310c89b0f4bca7535ed6ab6",
         "type": "github"
       },
       "original": {

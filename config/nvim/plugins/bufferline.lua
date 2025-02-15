@@ -1,6 +1,7 @@
 require("scope").setup({})
 
 require("bufferline").setup({
+	highlights = require("mestizo.claves.integraciones.especial.bufferline"),
 	options = {
 		separator_style = "slope",
 		diagnostics = "nvim_lsp",
