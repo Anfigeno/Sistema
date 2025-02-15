@@ -3,7 +3,7 @@ local colores = require("mestizo.paleta")
 require("notify").setup({
 	render = "wrapped-compact",
 	top_down = false,
-	background_color = colores.base,
+	background_colour = colores.base,
 })
 
 local progress = vim.defaulttable()

@@ -6,6 +6,8 @@
     italic_font = "Monaspace Radon Medium";
     bold_italic_font = "Monaspace Radon Bold";
 
+    shell = "fish";
+
     font_size = 9;
     modify_font = ''
       cell_height 10px
