@@ -38,7 +38,6 @@
     luajit
     luajitPackages.luarocks
     copyq
-    zellij
     zip
     unzip
     ripgrep
@@ -112,6 +111,7 @@
   };
 
   programs.kitty = import ../config/kitty/kitty.nix;
+  programs.zellij = import ../config/zellij/zellij.nix;
   programs.gh.enable = true;
 
   # Let Home Manager install and manage itself.
