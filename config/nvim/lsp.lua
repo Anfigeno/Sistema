@@ -7,6 +7,12 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSi
 -- LSP's
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
+local configuracion_por_defecto = { capabilities = capabilities }
+local servidores = { "nixd", "svelte", "cssls", "html", "jsonls" }
+
+for _, servidor in ipairs(servidores) do
+	lspconfig[servidor].setup(configuracion_por_defecto)
+end
 
 lspconfig.lua_ls.setup({
 	capabilities = capabilities,
@@ -44,6 +50,6 @@ lspconfig.ts_ls.setup({
 	},
 })
 
-lspconfig.nixd.setup({})
+lspconfig.nixd.setup(configuracion_por_defecto)
 
-lspconfig.svelte.setup({})
+lspconfig.svelte.setup(configuracion_por_defecto)

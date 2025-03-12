@@ -58,6 +58,7 @@
     prettierd
     stylua
     nixfmt-rfc-style
+    vscode-langservers-extracted
   ];
 
   #
