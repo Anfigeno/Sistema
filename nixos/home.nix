@@ -43,6 +43,7 @@
     ripgrep
     direnv
     gnomeExtensions.appindicator
+    gnomeExtensions.forge
     monaspace
     nerd-fonts.droid-sans-mono
 
