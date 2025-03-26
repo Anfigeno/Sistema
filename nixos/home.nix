@@ -56,7 +56,7 @@
     lua-language-server
     nixd
     biome
-    prettierd
+    prettier
     stylua
     nixfmt-rfc-style
     vscode-langservers-extracted
