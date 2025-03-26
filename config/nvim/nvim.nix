@@ -148,6 +148,9 @@
           p.tree-sitter-tsx
           p.tree-sitter-javascript
           p.tree-sitter-jsdoc
+          p.tree-sitter-bash
+          p.tree-sitter-fish
+          p.tree-sitter-prisma
         ]))
 
         {
