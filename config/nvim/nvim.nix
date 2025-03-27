@@ -29,6 +29,11 @@
             name = "mestizo";
             src = inputs.plugin-mestizo-nvim;
           };
+
+          own-http-client-nvim = prev.vimUtils.buildVimPlugin {
+            name = "http-client";
+            src = inputs.plugin-http-client-nvim;
+          };
         };
       })
     ];
@@ -56,6 +61,11 @@
       configure.customRC = toLuaFile ./options.lua;
 
       configure.packages.nix.start = with pkgs.vimPlugins; [
+        {
+          plugin = own-http-client-nvim;
+          config = toLuaFile ./plugins/http-client.lua;
+        }
+
         {
           plugin = lualine-nvim;
           config = toLuaFile ./plugins/lualine.lua;
@@ -151,6 +161,7 @@
           p.tree-sitter-bash
           p.tree-sitter-fish
           p.tree-sitter-prisma
+          p.tree-sitter-http
         ]))
 
         {
