@@ -21,8 +21,8 @@
     plugin-mestizo-nvim.url = "github:Anfigeno/Mestizo.nvim";
     plugin-mestizo-nvim.flake = false;
 
-    plugin-http-client-nvim.url = "github:askfiy/http-client.nvim";
-    plugin-http-client-nvim.flake = false;
+    plugin-kulala-nvim.url = "github:mistweaverco/kulala.nvim";
+    plugin-kulala-nvim.flake = false;
   };
 
   outputs =

@@ -52,19 +52,19 @@
         "type": "github"
       }
     },
-    "plugin-http-client-nvim": {
+    "plugin-kulala-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1742538782,
-        "narHash": "sha256-qp283XBaiSY/JDeaHExg9VYzDHb+1Pyu6MUjilYK+UE=",
-        "owner": "askfiy",
-        "repo": "http-client.nvim",
-        "rev": "432bd77cb66c50d5869212baa9d4e6e341452232",
+        "lastModified": 1743102647,
+        "narHash": "sha256-Net5ELcJs3Ykmd7EPoC6Uws/9NLoRQSubG1yDmSYt44=",
+        "owner": "mistweaverco",
+        "repo": "kulala.nvim",
+        "rev": "791b8850e8faf0588955cf531a0817195bcab737",
         "type": "github"
       },
       "original": {
-        "owner": "askfiy",
-        "repo": "http-client.nvim",
+        "owner": "mistweaverco",
+        "repo": "kulala.nvim",
         "type": "github"
       }
     },
@@ -121,7 +121,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "plugin-hlchunk-nvim": "plugin-hlchunk-nvim",
-        "plugin-http-client-nvim": "plugin-http-client-nvim",
+        "plugin-kulala-nvim": "plugin-kulala-nvim",
         "plugin-mestizo-nvim": "plugin-mestizo-nvim",
         "plugin-modes-nvim": "plugin-modes-nvim",
         "plugin-workspaces-nvim": "plugin-workspaces-nvim"

@@ -30,9 +30,9 @@
             src = inputs.plugin-mestizo-nvim;
           };
 
-          own-http-client-nvim = prev.vimUtils.buildVimPlugin {
-            name = "http-client";
-            src = inputs.plugin-http-client-nvim;
+          own-kulala-nvim = prev.vimUtils.buildVimPlugin {
+            name = "kulala";
+            src = inputs.plugin-kulala-nvim;
           };
         };
       })
@@ -62,8 +62,8 @@
 
       configure.packages.nix.start = with pkgs.vimPlugins; [
         {
-          plugin = own-http-client-nvim;
-          config = toLuaFile ./plugins/http-client.lua;
+          plugin = own-kulala-nvim;
+          config = toLuaFile ./plugins/kulala.lua;
         }
 
         {
