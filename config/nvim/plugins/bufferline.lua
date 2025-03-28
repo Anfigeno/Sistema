@@ -19,5 +19,5 @@ require("bufferline").setup({
 vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<cr>")
 vim.keymap.set("n", "<s-tab>", "<cmd>BufferLineCyclePrev<cr>")
 vim.keymap.set("n", "<space>x", "<cmd>bp<bar>sp<bar>bn<bar>bd<CR>")
-vim.keymap.set("n", "<m-tab>", "<cmd>tabnext<cr>")
-vim.keymap.set("n", "<s-m-tab>", "<cmd>tabnext<cr>")
+vim.keymap.set("n", "<c-t>", "<cmd>tabnew<cr>")
+vim.keymap.set("n", "<m-t>", "<cmd>tabnext<cr>")
