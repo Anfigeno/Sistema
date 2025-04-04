@@ -62,6 +62,16 @@
 
       configure.packages.nix.start = with pkgs.vimPlugins; [
         {
+          plugin = trouble-nvim;
+          config = toLua ''require("trouble").setup{}'';
+        }
+
+        {
+          plugin = tiny-inline-diagnostic-nvim;
+          config = toLuaFile ./plugins/tiny-inline-diagnostic.lua;
+        }
+
+        {
           plugin = own-kulala-nvim;
           config = toLuaFile ./plugins/kulala.lua;
         }
