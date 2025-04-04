@@ -21,45 +21,53 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    fishPlugins.tide
-    fishPlugins.plugin-git
-    vscode
-    kitty-img
+    # Aplicaciones de terminal
+    jq
     wget
     curl
-    gnome-tweaks
     eza
     fzf
-    yazi
-    zed-editor
-    sshfs
-    btop
-    cmus
-    luajit
-    luajitPackages.luarocks
-    copyq
-    zip
-    unzip
     ripgrep
     direnv
-    gnomeExtensions.appindicator
-    gnomeExtensions.forge
-    monaspace
-    nerd-fonts.droid-sans-mono
-
-    # Para Neovim
+    btop
+    sshfs
+    zip
+    unzip
+    yazi
+    cmus
     xclip
-    nodejs_20
 
-    # Lenguajes de servidor y formateadores
-    typescript-language-server
-    lua-language-server
-    nixd
+    # Aplicaciones
+    copyq
+    vscode
+    zed-editor
+
+    # Lenguajes de programación / Entornos de ejecución / Manejadores de paquetes
+    nodejs_20
+    bun
+    luajit
+    luajitPackages.luarocks
+
+    # Formateadores
     biome
     prettierd
     stylua
     nixfmt-rfc-style
+
+    # Lenguajes de servidor
+    lua-language-server
+    typescript-language-server
     vscode-langservers-extracted
+    nixd
+
+    # 🌐 Entorno GNOME
+    gnome-tweaks
+    gnomeExtensions.appindicator
+    gnomeExtensions.forge
+
+    # 🔠 Fuentes
+    monaspace
+    nerd-fonts.droid-sans-mono
   ];
 
   #
