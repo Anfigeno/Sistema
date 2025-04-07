@@ -17,7 +17,16 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSi
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
 local configuracion_por_defecto = { capabilities = capabilities }
-local servidores = { "nixd", "svelte", "cssls", "html", "jsonls", "prismals", "biome" }
+local servidores = {
+	"nixd",
+	"svelte",
+	"cssls",
+	"html",
+	"jsonls",
+	"prismals",
+	"biome",
+	"solargraph",
+}
 
 for _, servidor in ipairs(servidores) do
 	lspconfig[servidor].setup(configuracion_por_defecto)
@@ -54,6 +63,22 @@ lspconfig.ts_ls.setup({
 				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
 				includeInlayPropertyDeclarationTypeHints = true,
 				includeInlayVariableTypeHints = true,
+			},
+		},
+	},
+})
+
+lspconfig.basedpyright.setup({
+	settings = {
+		basedpyright = {
+			analysis = {
+				inlayHints = {
+					variableTypes = true,
+					callArgumentNames = true,
+					functionReturnTypes = true,
+					genericTypes = true,
+					useTypingExtensions = true,
+				},
 			},
 		},
 	},
