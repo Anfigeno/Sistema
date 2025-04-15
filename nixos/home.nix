@@ -36,6 +36,10 @@
     yazi
     cmus
     xclip
+    fish
+    fishPlugins.tide
+    fishPlugins.fzf-fish
+    fishPlugins.done
 
     # Aplicaciones
     copyq
@@ -104,11 +108,10 @@
   #
   #  /etc/profiles/per-user/anfitrion/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    TERM = "kitty";
-    SHELL = "fish";
-  };
+  # home.sessionVariables = {
+  #   EDITOR = "nvim";
+  #   TERM = "kitty";
+  # };
 
   # Programitas
   programs.git = {

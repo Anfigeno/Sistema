@@ -2,15 +2,20 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.home-manager
-    ];
-  
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.home-manager
+  ];
+
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
@@ -81,7 +86,10 @@
   users.users.anfitrion = {
     isNormalUser = true;
     description = "Anfitrion";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   #fonts.packages = with pkgs; [
@@ -89,16 +97,15 @@
   #  monaspace
   # ];
 
-
   # Servicios
   services.flatpak.enable = true;
   services.openssh.enable = true;
 
-  # Programas
-  programs.fish.enable = true;
-
   # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -133,4 +140,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 
+  # Programas que no se pueden activar en home manager por alguna estúpida razón
+
+  programs.fish = import ../config/fish.nix;
 }
